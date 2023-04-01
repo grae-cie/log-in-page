@@ -38,6 +38,10 @@ display: none;
 justify-items: center;
 }
 
+.contact-info > div{
+  margin-bottom: 10px;
+}
+
 .delete-all{
 border: 2px solid red;
 color: red;
