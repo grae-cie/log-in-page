@@ -1,0 +1,62 @@
+body{
+  background-color: #fbfb0428;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+input{
+  width: 100%;
+  min-width: 200px;
+  margin: 10px 0px;
+  border: 1px solid rgb(117, 193, 4);
+  background-color: rgb(216, 255, 242);
+  border-radius: 10px;
+  padding: 9px 15px ;
+  font-size: 15px
+}
+
+button{
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #000000da;
+  color: rgba(0, 0, 0, 0.681);
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: 10px;
+  background-color: rgba(216, 255, 242, 0.499);
+  border: 1px solid rgb(117, 193, 4);
+  }
+.login-div{
+  display: grid;
+  justify-content: center;
+   justify-items: left;
+  text-align: center;
+}
+
+.contact-div{
+display: none;
+justify-items: center;
+}
+
+.delete-all{
+border: 2px solid red;
+color: red;
+
+}
+
+.contact-btn:hover{
+border: 2px solid rgb(6, 234, 166);
+}
+
+.contact-info{
+width: 100%;
+display: grid;
+justify-content: space-around;
+height: 100%;
+margin-top: 20px;
+}
+
+
+
+
+
