@@ -25,7 +25,16 @@ button{
   margin-top: 10px;
   background-color: rgba(216, 255, 242, 0.499);
   border: 1px solid rgb(117, 193, 4);
-  }
+}
+
+a{
+  text-decoration: none;
+}
+a:visited{
+  text-decoration: none;
+  color: black;
+}
+
 .login-div{
   display: grid;
   justify-content: center;
@@ -33,32 +42,9 @@ button{
   text-align: center;
 }
 
-.contact-div{
-display: none;
-justify-items: center;
-}
 
-.contact-info > div{
-  margin-bottom: 10px;
-}
 
-.delete-all{
-border: 2px solid red;
-color: red;
 
-}
-
-.contact-btn:hover{
-border: 2px solid rgb(6, 234, 166);
-}
-
-.contact-info{
-width: 100%;
-display: grid;
-justify-content: space-around;
-height: 100%;
-margin-top: 20px;
-}
 
 
 

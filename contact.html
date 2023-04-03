@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+  </style>
+  
+  <style>
+   body{
+    background-color: #fbfb0428;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+  }
+
+  input{
+    width: 100%;
+    min-width: 200px;
+    margin: 10px 0px;
+    border: 1px solid rgb(117, 193, 4);
+    background-color: rgb(216, 255, 242);
+    border-radius: 10px;
+    padding: 9px 15px ;
+    font-size: 15px
+  }
+
+  button{
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #000000da;
+    color: rgba(0, 0, 0, 0.681);
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 10px;
+    background-color: rgba(216, 255, 242, 0.499);
+    border: 1px solid rgb(117, 193, 4);
+  }
+  .contact-div{
+    display: grid;
+    justify-items: center;
+  }
+
+  .contact-info > div{
+    margin-bottom: 10px;
+  }
+
+  .delete-all{
+    border: 2px solid red;
+    color: red;
+  }
+
+  .contact-btn:hover{
+   border: 2px solid rgb(6, 234, 166);
+  }
+
+  .contact-info{
+    width: 100%;
+    display: grid;
+    justify-content: space-around;
+    height: 100%;
+    margin-top: 20px;
+  }
+  </style>
+</head>
+<body>
+  <div class="contact-div">
+    <h2>My Contact List</h2>
+    <div>
+      <input type="text" placeholder="Contact Name" class="contact-name" > 
+      <br>
+      <input type="tel" placeholder="Tel-Number" class="contact-tel"  > <br>
+      <button class="contact-btn">  Add Contact</button>
+    </div> 
+    <div class="contact-info">
+      <div></div>
+    </div> 
+    <button class="delete-all" style="margin-top: 200px;">
+      Delete All
+    </button>
+  </div>  
+
+  <script>
+    let info = []
+    let contactBtn = document.querySelector(".contact-btn")
+    let contactDiv = document.querySelector(".contact-div")
+    let contactInfo = document.querySelector(".contact-info")
+    let contactName = document.querySelector(".contact-name")
+    let contactTel = document.querySelector(".contact-tel")
+    const infoLocalStorage = JSON.parse(localStorage.getItem("info"))
+    const deleteAll = document.querySelector(".delete-all")
+
+    if(infoLocalStorage){
+      info = infoLocalStorage
+      render()
+    }
+
+    contactBtn.addEventListener("click", function(){
+      if(!(contactInfo.value === "") && !(contactTel.value === "")){
+      info.push(contactName.value + " " + contactTel.value ) 
+      contactName.value = ""
+      contactTel.value = ""
+      localStorage.setItem("info", JSON.stringify(info) )
+      render()
+      }
+    })
+    function render(){
+      contactInfo.innerHTML = ""
+      info.forEach(function(info){
+      let element = document.createElement("div") 
+      element.innerHTML = info
+      contactInfo.appendChild(element)
+    
+      })
+    }
+  
+    deleteAll.addEventListener("click", function(){
+      localStorage.clear()
+      info = []
+      render()
+    })
+  </script>
+</body>
+</html>
